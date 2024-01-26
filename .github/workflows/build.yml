@@ -36,4 +36,6 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
+    - run: openssl version
+    - run: ruby -ropenssl -e 'puts OpenSSL::OPENSSL_VERSION'
     - run: bundle exec rake
